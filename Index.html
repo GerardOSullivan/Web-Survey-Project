@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Dream Alive Center Survey</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name='author' content='Gerard O Sullivan'>
+    <meta name='keywords' content='Survey, Dream Alive, disabilities'>
+    <link rel="stylesheet" href="./style.css" />
+    <link href="Images/favicon.ico" rel="icon">
+    <link href="Images/favicon.ico" rel="shortcut icon">
+</head>
+<body>
+<main>
+    <form id="survey-form">
+        <header>
+            <div id="homepage-header">
+                <h1>Dream Alive Centre</h1>
+                <div class="col">
+                    <img src="Images/DisabilityLogo.png" alt="Icon" />
+                </div>
+                <div class="col">
+                    <p class="description">
+                        Welcome to our site. Our Survey aims to help you to get a sense of your organisation’s
+                        representativeness of the community in which it is located.
+                        Ideally any organisation would reflect the demographics of its setting e.g. gender, age and ethnicity.
+                        In this instance we are interested in the relevance of your organisation to people with disabilities.
+                    </p>
+                    <br>
+                    <p class="description" style="text-align: center">Please select which sector applies to you:</p>
+                    <div class="row">
+                        <select style="flex:4" name="sector" id="first_listbox">
+                            <option value="" disabled selected>Choose Sector</option>
+                            <option value="public">public</option>
+                            <option value="private">private</option>
+                        </select>
+                        <p style="flex:1"></p>
+                        <select style="flex:4" name="sector" id="second_listbox">
+                        </select>
+                    </div>
+                </div>
+                <button type="button" class="btn" onclick="startSurvey(); startTimer();">Start Survey</button>
+            </div>
+            <div id="survey-header" class="hideSection">
+                <h1>Survey Form</h1>
+                 <div class="col">
+                       <img src="Images/DisabilityLogo.png" alt="Icon" />
+                 </div>
+                <div>
+                <p class="description">
+                    Please consider the following questions and identify your level of agreement with the statement
+                </p>
+                <div style="padding: 0">
+                <ol style="margin-left: 15px" class="description" >
+                <li>
+                    Strongly disagree
+                </li>
+                <li>
+                    Disagree
+                </li>
+                <li>
+                    Neutral/ Don’t know
+                </li>
+                <li>
+                    Agree
+                </li>
+                <li>
+                    Strongly agree
+                </li>
+                </ol>
+                </div>
+                <p class="description">
+                    <span class="new-line">Please fill in the form below to help us with our work.</span>
+                </p>
+                </div>
+            </div>
+            <div id="process-header" class="hideSection">
+                <h1>Thank you for completing the survey</h1>
+                <div class="col">
+                    <img src="Images/Tick.png" alt="Icon" />
+                </div>
+                <div class="col">
+                    <p class="description">
+                        Thank you for completing this survey. All your answers will help build a better work environment.
+                        You will find a summary for each section that you have completed as well as a total summary for all sections
+                        on this page.
+                    </p>
+                </div>
+            </div>
+        </header>
+
+        <!-- Section 1 -->
+            <section class="question-sections, hideSection" id="section1">
+                <h2>Section 1: Verification (20)   (scored as per the likert scale)</h2>
+                <div id="surveyQuestions1">
+                    <table>
+                        <tr>
+                            <th></th>
+                            <th>1</th>
+                            <th>2</th>
+                            <th>3</th>
+                            <th>4</th>
+                            <th>5</th>
+                        </tr>
+                        <tr>
+                            <td id="sec1Question1">I and/or my colleagues know where to get information to help us analyse the business case for consciously attracting people with disabilities as members</td>
+                            <td><input type="radio" name="sec1Question1" value="1" onclick="recordAnswers(1,1)"></td>
+                            <td><input type="radio" name="sec1Question1" value="2" onclick="recordAnswers(1,2)"></td>
+                            <td><input type="radio" name="sec1Question1" value="3" onclick="recordAnswers(1,3)"></td>
+                            <td><input type="radio" name="sec1Question1" value="4" onclick="recordAnswers(1,4)"></td>
+                            <td><input type="radio" name="sec1Question1" value="5" onclick="recordAnswers(1,5)"></td>
+                        </tr>
+                        <tr>
+                            <td id="sec1Question2">I/my colleagues have researched the scope for increasing the participation of the broader community, in particular people with disabilities</td>
+                            <td><input type="radio" name="sec1Question2" value="1" onclick="recordAnswers(2,1)"></td>
+                            <td><input type="radio" name="sec1Question2" value="2" onclick="recordAnswers(2,2)"></td>
+                            <td><input type="radio" name="sec1Question2" value="3" onclick="recordAnswers(2,3)"></td>
+                            <td><input type="radio" name="sec1Question2" value="4" onclick="recordAnswers(2,4)"></td>
+                            <td><input type="radio" name="sec1Question2" value="5" onclick="recordAnswers(2,5)"></td>
+                        </tr>
+                        <tr>
+                            <td id="sec1Question3">I know of disability service providers that I could link with in the local community</td>
+                            <td><input type="radio" name="sec1Question3" value="1" onclick="recordAnswers(3,1)"></td>
+                            <td><input type="radio" name="sec1Question3" value="2" onclick="recordAnswers(3,2)"></td>
+                            <td><input type="radio" name="sec1Question3" value="3" onclick="recordAnswers(3,3)"></td>
+                            <td><input type="radio" name="sec1Question3" value="4" onclick="recordAnswers(3,4)"></td>
+                            <td><input type="radio" name="sec1Question3" value="5" onclick="recordAnswers(3,5)"></td>
+                        </tr>
+                        <tr>
+                            <td id="sec1Question4">My colleagues and I inclusive our services to provide for people with disabilities </td>
+                            <td><input type="radio" name="sec1Question4" value="1" onclick="recordAnswers(4,1)"></td>
+                            <td><input type="radio" name="sec1Question4" value="2" onclick="recordAnswers(4,2)"></td>
+                            <td><input type="radio" name="sec1Question4" value="3" onclick="recordAnswers(4,3)"></td>
+                            <td><input type="radio" name="sec1Question4" value="4" onclick="recordAnswers(4,4)"></td>
+                            <td><input type="radio" name="sec1Question4" value="5" onclick="recordAnswers(4,5)"></td>
+                        </tr>
+                    </table>
+                <br>
+                    <button id="section1Button" type="button" class="btn" onclick="scoreSection(1)">Submit</button>
+                </div>
+            </section>
+
+        <!-- Section 2 -->
+        <section class="question-sections, hideSection" id="section2">
+            <h2>Section 2: Value Proposition (25)  (scored as per the likert scale)</h2>
+            <div id="surveyQuestions2">
+            <table>
+                <tr>
+                    <th></th>
+                    <th>1</th>
+                    <th>2</th>
+                    <th>3</th>
+                    <th>4</th>
+                    <th>5</th>
+                </tr>
+                <tr>
+                    <td id="sec2Question1">I and/or my colleagues know where to get information to help us analyse the business case for consciously attracting people with disabilities as members</td>
+                    <td><input type="radio" name="sec2Question1" value="1" onclick="recordAnswers(1,1)"></td>
+                    <td><input type="radio" name="sec2Question1" value="2" onclick="recordAnswers(1,2)"></td>
+                    <td><input type="radio" name="sec2Question1" value="3" onclick="recordAnswers(1,3)"></td>
+                    <td><input type="radio" name="sec2Question1" value="4" onclick="recordAnswers(1,4)"></td>
+                    <td><input type="radio" name="sec2Question1" value="5" onclick="recordAnswers(1,5)"></td>
+                </tr>
+                <tr>
+                    <td id="sec2Question2">I/my colleagues have researched the scope for increasing the participation of the broader community, in particular people with disabilities</td>
+                    <td><input type="radio" name="sec2Question2" value="1" onclick="recordAnswers(2,1)"></td>
+                    <td><input type="radio" name="sec2Question2" value="2" onclick="recordAnswers(2,2)"></td>
+                    <td><input type="radio" name="sec2Question2" value="3" onclick="recordAnswers(2,3)"></td>
+                    <td><input type="radio" name="sec2Question2" value="4" onclick="recordAnswers(2,4)"></td>
+                    <td><input type="radio" name="sec2Question2" value="5" onclick="recordAnswers(2,5)"></td>
+                </tr>
+                <tr>
+                    <td id="sec2Question3">I know of disability service providers that I could link with in the local community</td>
+                    <td><input type="radio" name="sec2Question3" value="1" onclick="recordAnswers(3,1)"></td>
+                    <td><input type="radio" name="sec2Question3" value="2" onclick="recordAnswers(3,2)"></td>
+                    <td><input type="radio" name="sec2Question3" value="3" onclick="recordAnswers(3,3)"></td>
+                    <td><input type="radio" name="sec2Question3" value="4" onclick="recordAnswers(3,4)"></td>
+                    <td><input type="radio" name="sec2Question3" value="5" onclick="recordAnswers(3,5)"></td>
+                </tr>
+                <tr>
+                    <td id="sec2Question4">My colleagues and I inclusive our services to provide for people with disabilities </td>
+                    <td><input type="radio" name="sec2Question4" value="1" onclick="recordAnswers(4,1)"></td>
+                    <td><input type="radio" name="sec2Question4" value="2" onclick="recordAnswers(4,2)"></td>
+                    <td><input type="radio" name="sec2Question4" value="3" onclick="recordAnswers(4,3)"></td>
+                    <td><input type="radio" name="sec2Question4" value="4" onclick="recordAnswers(4,4)"></td>
+                    <td><input type="radio" name="sec2Question4" value="5" onclick="recordAnswers(4,5)"></td>
+                </tr>
+                <tr>
+                    <td id="sec2Question5">My colleagues and I inclusive our services to provide for people with disabilities </td>
+                    <td><input type="radio" name="sec2Question5" value="1" onclick="recordAnswers(5,1)"></td>
+                    <td><input type="radio" name="sec2Question5" value="2" onclick="recordAnswers(5,2)"></td>
+                    <td><input type="radio" name="sec2Question5" value="3" onclick="recordAnswers(5,3)"></td>
+                    <td><input type="radio" name="sec2Question5" value="4" onclick="recordAnswers(5,4)"></td>
+                    <td><input type="radio" name="sec2Question5" value="5" onclick="recordAnswers(5,5)"></td>
+                </tr>
+            </table>
+            <br>
+            <button id="section2Button" type="button" class="btn" onclick="scoreSection(2)">Submit</button>
+            </div>
+        </section>
+
+        <!-- Section 3 -->
+        <section class="question-sections, hideSection" id="section3">
+            <h2>Section 3: Vision (10) (5 (scored as per the likert scale) + 5)</h2>
+            <div id="surveyQuestions3">
+            <table>
+                <tr>
+                    <th></th>
+                    <th>1</th>
+                    <th>2</th>
+                    <th>3</th>
+                    <th>4</th>
+                    <th>5</th>
+                </tr>
+                <tr>
+                    <td id="sec3Question1">I and/or my colleagues know where to get information to help us analyse the business case for consciously attracting people with disabilities as members</td>
+                    <td><input type="radio" name="sec3Question1" value="1" onclick="recordAnswers(1,1)"></td>
+                    <td><input type="radio" name="sec3Question1" value="2" onclick="recordAnswers(1,2)"></td>
+                    <td><input type="radio" name="sec3Question1" value="3" onclick="recordAnswers(1,3)"></td>
+                    <td><input type="radio" name="sec3Question1" value="4" onclick="recordAnswers(1,4)"></td>
+                    <td><input type="radio" name="sec3Question1" value="5" onclick="recordAnswers(1,5)"></td>
+                </tr>
+            </table>
+            <br>
+            <h2>Which of the following statements best describes your situation within your organisation (Please select one)</h2>
+            <table>
+                <tr>
+                    <td >I and/or my colleagues have identified set targets for increasing the UniversAbility  of our services and are putting strategies in place to achieve these goals <span style="color: #4394d6">(5)</span></td>
+                    <td><input type="radio" name="sec3Question2" value="5" onclick="recordAnswers(2,5)"></td>
+                </tr>
+                <tr>
+                    <td >I and/or my colleagues have identified scope for increasing the UniversAbility  of our services <span style="color: #4394d6">(4)</span></td>
+                    <td><input type="radio" name="sec3Question2" value="4" onclick="recordAnswers(2,4)"></td>
+                </tr>
+                <tr>
+                    <td >I THINK there may be scope for inclusivizing our services but am not sure <span style="color: #4394d6">(3)</span></td>
+                    <td><input type="radio" name="sec3Question2" value="3" onclick="recordAnswers(2,3)"></td>
+                </tr>
+                <tr>
+                    <td >I have never considered inclusivizing our services until now <span style="color: #4394d6">(2)</span></td>
+                    <td><input type="radio" name="sec3Question2" value="2" onclick="recordAnswers(2,2)"></td>
+                </tr>
+                <tr>
+                    <td >I don’t think inclusivizing our services, in particular for people with disabilities, is really an option for us but won’t rule it out completely until it has been fully explored <span style="color: #4394d6">(1)</span></td>
+                    <td><input type="radio" name="sec3Question2" value="1" onclick="recordAnswers(2,1)"></td>
+                </tr>
+            </table>
+            <br>
+            <button id="section3Button" type="button" class="btn" onclick="scoreSection(3)">Submit</button>
+            </div>
+        </section>
+
+        <!-- Section 4 -->
+        <section class="question-sections, hideSection" id="section4">
+            <h2>Section 4: Philosophy (40)</h2>
+            <p id="secHelp4" style="display: none">*If you choose to select yes more questions will be asked*</p>
+            <div id="surveyQuestions4">
+            <table>
+                <tr>
+                    <th></th>
+                    <th>yes<span style="color: #4394d6">(10)</span></th>
+                    <th>no</th>
+                </tr>
+                <tr>
+                    <td id="sec4Question1" onmouseover="helpOn(4)" onmouseout="helpOff(4)">Does your organisation have stated ideals in your strategic plan or other management documents which relate UniversAbility of your services?*</td>
+                    <td style="padding-left: 30px"><input type="radio" name="sec4Question1" value="10" onclick="recordAnswers(1,10); document.getElementById('sec4Question2').style.display='block'"></td>
+                    <td style="padding-left: 14px"><input type="radio" name="sec4Question1" value="0" onclick="recordAnswers(1,0); document.getElementById('sec4Question2').style.display='none'"></td>
+                </tr>
+            </table>
+            <br>
+            <table id="sec4Question2" style="display: none">
+                <tr>
+                    <td>Do you think an inclusive philosophy is a lived experience by:</td>
+                    <td>Please select at least one</td>
+                </tr>
+                <tr>
+                    <td>a)	Management?<span style="color: #4394d6">(10)</span></td>
+                    <td><input type="checkbox" name="Section4"> </td>
+                </tr>
+                <tr>
+                    <td>b)	Staff?<span style="color: #4394d6">(10)</span></td>
+                    <td><input type="checkbox" name="Section4"> </td>
+                </tr>
+                <tr>
+                    <td>c)	Customers?<span style="color: #4394d6">(10)</span></td>
+                    <td><input type="checkbox" name="Section4"> </td>
+                </tr>
+            </table>
+            <br>
+            <button id="section4Button" type="button" class="btn" onclick="scoreSection(4)">Submit</button>
+            </div>
+        </section>
+
+        <!-- Section 5 -->
+        <section class="question-sections, hideSection" id="section5">
+            <h2>Section 5: Policy (50)</h2>
+            <div id="surveyQuestions5">
+            <table>
+                <tr>
+                    <th></th>
+                    <th>Not needed because equipment is already fully accessible<span style="color: #4394d6">(10)</span></th>
+                    <th>yes<span style="color: #4394d6">(10)</span></th>
+                    <th>no</th>
+                </tr>
+                <tr>
+                    <td id="sec5Question1">1. Does your charging policy account for the varied needs of your customers? E.g. No charge for personal assistants</td>
+                    <td></td>
+                    <td style="padding-left: 30px"><input type="radio" name="sec5Question1" value="10" onclick="recordAnswers(1,10);"></td>
+                    <td style="padding-left: 14px"><input type="radio" name="sec5Question1" value="0" onclick="recordAnswers(1,0);"></td>
+                </tr>
+                <tr>
+                    <td id="sec5Question2">2. Do you track and monitor the proportion of your club members who experience disabilities?</td>
+                    <td></td>
+                    <td style="padding-left: 30px"><input type="radio" name="sec5Question2" value="10" onclick="recordAnswers(2,10);"></td>
+                    <td style="padding-left: 14px"><input type="radio" name="sec5Question2" value="0" onclick="recordAnswers(2,0);"></td>
+                </tr>
+                <tr>
+                    <td>3.	Have you a budget allocated to:</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td id="sec5Question3a">(a)	increasing the UniversAbility  of your services? (eg. facilities, equipment and staff training)</td>
+                    <td class="alignButton"><input type="radio" name="sec5Question3a" value="10" onclick="recordAnswers(3,10);"></td>
+                    <td style="padding-left: 30px"><input type="radio" name="sec5Question3a" value="10" onclick="recordAnswers(3,10);"></td>
+                    <td style="padding-left: 14px"><input type="radio" name="sec5Question3a" value="0" onclick="recordAnswers(3,0);"></td>
+                </tr>
+                <tr>
+                    <td id="sec5Question3b">(b)	increasing the UniversAbility  of your policies? </td>
+                    <td></td>
+                    <td style="padding-left: 30px"><input type="radio" name="sec5Question3b" value="10" onclick="recordAnswers(4,10);"></td>
+                    <td style="padding-left: 14px"><input type="radio" name="sec5Question3b" value="0" onclick="recordAnswers(4,0);"></td>
+                </tr>
+                <tr>
+                    <td id="sec5Question4">4.Are you familiar with the national legislation that relates to disability service provision? </td>
+                    <td></td>
+                    <td style="padding-left: 30px"><input type="radio" name="sec5Question4" value="10" onclick="recordAnswers(5,10);"></td>
+                    <td style="padding-left: 14px"><input type="radio" name="sec5Question4" value="0" onclick="recordAnswers(5,0);"></td>
+                </tr>
+            </table>
+            <br>
+            <button id="section5Button" type="button" class="btn" onclick="scoreSection(5)">Submit</button>
+            </div>
+        </section>
+
+        <!-- Section 6 -->
+        <section class="question-sections, hideSection" id="section6">
+            <h2>Section 6 Processes (50)</h2>
+            <div id="surveyQuestions6">
+            <table>
+                <tr>
+                    <th></th>
+                    <th>yes<span style="color: #4394d6">(10)</span></th>
+                    <th>no</th>
+                </tr>
+                <tr>
+                    <td id="sec6Question1">1.Do you engage with disability groups in your local community?</td>
+                    <td style="padding-left: 30px"><input type="radio" name="sec6Question1" value="10" onclick="recordAnswers(1,10);"></td>
+                    <td style="padding-left: 14px"><input type="radio" name="sec6Question1" value="0" onclick="recordAnswers(1,0);"></td>
+                </tr>
+                <tr>
+                    <td id="sec6Question2">2.Have you forged any alliance/partnership with any disability organisation?</td>
+                    <td style="padding-left: 30px"><input type="radio" name="sec6Question2" value="10" onclick="recordAnswers(2,10);"></td>
+                    <td style="padding-left: 14px"><input type="radio" name="sec6Question2" value="0" onclick="recordAnswers(2,0);"></td>
+                </tr>
+                <tr>
+                    <td id="sec6Question3">3.Have you or your staff embraced any assistive technologies (E.g. Assist-Mi app)?</td>
+                    <td style="padding-left: 30px"><input type="radio" name="sec6Question3" value="10" onclick="recordAnswers(3,10);"></td>
+                    <td style="padding-left: 14px"><input type="radio" name="sec6Question3" value="0" onclick="recordAnswers(3,0);"></td>
+                </tr>
+                <tr>
+                    <td id="sec6Question4">4.Have you or your colleagues undertaken any research on Inclusivizing your service?</td>
+                    <td style="padding-left: 30px"><input type="radio" name="sec6Question4" value="10" onclick="recordAnswers(4,10);"></td>
+                    <td style="padding-left: 14px"><input type="radio" name="sec6Question4" value="0" onclick="recordAnswers(4,0);"></td>
+                </tr>
+                <tr>
+                    <td id="sec6Question5">5.Do you encourage your staff to engage in customer satisfaction conversations with different user groups?</td>
+                    <td style="padding-left: 30px"><input type="radio" name="sec6Question5" value="10" onclick="recordAnswers(5,10);"></td>
+                    <td style="padding-left: 14px"><input type="radio" name="sec6Question5" value="0" onclick="recordAnswers(5,0);"></td>
+                </tr>
+            </table>
+            <br>
+            <button id="section6Button" type="button" class="btn" onclick="scoreSection(6)">Submit</button>
+            </div>
+        </section>
+
+        <!-- Section 7 -->
+        <section class="question-sections, hideSection" id="section7">
+            <h2>Section 7 Perception (20)</h2>
+            <div id="surveyQuestions7">
+            <table>
+                <tr>
+                    <th></th>
+                    <th>yes<span style="color: #4394d6">(10)</span></th>
+                    <th>no</th>
+                </tr>
+                <tr>
+                    <td id="sec7Question1">1.Do you gather information from your users on their beliefs about fitness being a fundamental right for all?</td>
+                    <td style="padding-left: 30px"><input type="radio" name="sec7Question1" value="10" onclick="recordAnswers(1,10);"></td>
+                    <td style="padding-left: 14px"><input type="radio" name="sec7Question1" value="0" onclick="recordAnswers(1,0);"></td>
+                </tr>
+                <tr>
+                    <td id="sec7Question2">2.Do you gather information from people who do NOT use your facility on fitness being a fundamental right for all?</td>
+                    <td style="padding-left: 30px"><input type="radio" name="sec7Question2" value="10" onclick="recordAnswers(2,10);"></td>
+                    <td style="padding-left: 14px"><input type="radio" name="sec7Question2" value="0" onclick="recordAnswers(2,0);"></td>
+                </tr>
+            </table>
+            <br>
+            <button id="section7Button" type="button" class="btn" onclick="scoreSection(7)">Submit</button>
+            </div>
+        </section>
+
+        <!-- Section 8 -->
+        <section class="question-sections, hideSection" id="section8">
+            <h2>Section 8 Programmes (80)</h2>
+            <p id="secHelp8" style="display: none">*If you choose to select yes more questions will be asked*</p>
+            <div id="surveyQuestions8">
+            <table>
+                <tr>
+                    <th></th>
+                    <th>yes<span style="color: #4394d6">(10)</span></th>
+                    <th>no</th>
+                </tr>
+                <tr>
+                    <td id="sec8Question1" onmouseover="helpOn(8)" onmouseout="helpOff(8)">1. Does your organisation have stated ideals in your strategic plan or other management documents which relate UniversAbility of your services?*</td>
+                    <td style="padding-left: 30px"><input type="radio" name="sec8Question1" value="10" onclick="recordAnswers(1,10); document.getElementById('sec8Question2').style.display='block'"></td>
+                    <td style="padding-left: 14px"><input type="radio" name="sec8Question1" value="0" onclick="recordAnswers(1,0); document.getElementById('sec8Question2').style.display='none'"></td>
+                </tr>
+            </table>
+            <div id="sec8Question2" style="display: none">
+            <br>
+            <h2>As you have chosen yes please select any of the options that applies to your organisation</h2>
+            <table>
+                <tr>
+                    <th>Disability Category</th>
+                    <th>YES</th>
+                </tr>
+                <tr>
+                    <td>Physical disabilities <span style="color: #4394d6">(10)</span></td>
+                    <td><input type="checkbox" name="Section8"> </td>
+                </tr>
+                <tr>
+                    <td>Intellectual disabilities <span style="color: #4394d6">(10)</span></td>
+                    <td><input type="checkbox" name="Section8"> </td>
+                </tr>
+                <tr>
+                    <td>Sensory disabilities <span style="color: #4394d6">(10)</span></td>
+                    <td><input type="checkbox" name="Section8"> </td>
+                </tr>
+                <tr>
+                    <td>Mental health difficulties<span style="color: #4394d6">(10)</span></td>
+                    <td><input type="checkbox" name="Section8"> </td>
+                </tr>
+            </table>
+            </div>
+            <br>
+            <!-- second yes and no question-->
+                <p id="secHelp82" style="display: none">*If you choose to select yes more questions will be asked*</p>
+            <table>
+                <tr>
+                    <th></th>
+                    <th>yes<span style="color: #4394d6">(10)</span></th>
+                    <th>no</th>
+                </tr>
+                <tr>
+                    <td id="sec8Question3" onmouseover="helpOn(82)" onmouseout="helpOff(82)">2. Do people with disabilities use the gym, pool, or participate in group activities etc. alongside other members?*</td>
+                    <td style="padding-left: 30px"><input type="radio" name="sec8Question3" value="10" onclick="recordAnswers(2,10); document.getElementById('sec8Question4').style.display='block'"></td>
+                    <td style="padding-left: 14px"><input type="radio" name="sec8Question3" value="0" onclick="recordAnswers(2,0); document.getElementById('sec8Question4').style.display='none'"></td>
+                </tr>
+            </table>
+            <div id="sec8Question4" style="display: none">
+                <br>
+                <h2>As you have chosen yes please select any of the options that applies to your organisation</h2>
+                <table>
+                    <tr>
+                        <th>Disability Category</th>
+                        <th>YES</th>
+                    </tr>
+                    <tr>
+                        <td>Physical disabilities <span style="color: #4394d6">(10)</span></td>
+                        <td><input type="checkbox" name="Section8"> </td>
+                    </tr>
+                    <tr>
+                        <td>Intellectual disabilities <span style="color: #4394d6">(10)</span></td>
+                        <td><input type="checkbox" name="Section8"> </td>
+                    </tr>
+                    <tr>
+                        <td>Sensory disabilities <span style="color: #4394d6">(10)</span></td>
+                        <td><input type="checkbox" name="Section8"> </td>
+                    </tr>
+                    <tr>
+                        <td>Mental health difficulties<span style="color: #4394d6">(10)</span></td>
+                        <td><input type="checkbox" name="Section8"> </td>
+                    </tr>
+                </table>
+            </div>
+            <br>
+            <button id="section8Button" type="button" class="btn" onclick="scoreSection(8)">Submit</button>
+            </div>
+        </section>
+
+        <!-- Section 9 -->
+        <section class="question-sections, hideSection" id="section9">
+            <h2>Section 9: People (60)</h2>
+            <div id="surveyQuestions9">
+            <table>
+                <tr>
+                    <th></th>
+                    <th>yes<span style="color: #4394d6">(10)</span></th>
+                    <th>no</th>
+                </tr>
+                <tr>
+                    <td>1. Have you or any of your staff/volunteers had training that facilitates the inclusion of people with disabilities?</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td id="sec9Question1a">A. Operational (teaching/instructional staff)	</td>
+                    <td style="padding-left: 30px"><input type="radio" name="sec9Question1a" value="10" onclick="recordAnswers(1,10);"></td>
+                    <td style="padding-left: 14px"><input type="radio" name="sec9Question1a" value="0" onclick="recordAnswers(1,0);"></td>
+                </tr>
+                <tr>
+                    <td id="sec9Question1b">B. Management </td>
+                    <td style="padding-left: 30px"><input type="radio" name="sec9Question1b" value="10" onclick="recordAnswers(2,10);"></td>
+                    <td style="padding-left: 14px"><input type="radio" name="sec9Question1b" value="0" onclick="recordAnswers(2,0);"></td>
+                </tr>
+                <tr>
+                    <td id="sec9Question1c">C. Front of house </td>
+                    <td style="padding-left: 30px"><input type="radio" name="sec9Question1c" value="10" onclick="recordAnswers(3,10);"></td>
+                    <td style="padding-left: 14px"><input type="radio" name="sec9Question1c" value="0" onclick="recordAnswers(3,0);"></td>
+                </tr>
+                <tr>
+                    <td id="sec9Question1d">D. Stakeholders/ contracted staff </td>
+                    <td style="padding-left: 30px"><input type="radio" name="sec9Question1d" value="10" onclick="recordAnswers(4,10);"></td>
+                    <td style="padding-left: 14px"><input type="radio" name="sec9Question1d" value="0" onclick="recordAnswers(4,0);"></td>
+                </tr>
+                <tr>
+                    <td id="sec9Question2">2. Are people with disabilities employed by your organisation and/or represented on your steering committee/ management committee/ board of management etc.?</td>
+                    <td style="padding-left: 30px"><input type="radio" name="sec9Question2" value="10" onclick="recordAnswers(5,10);"></td>
+                    <td style="padding-left: 14px"><input type="radio" name="sec9Question2" value="0" onclick="recordAnswers(5,0);"></td>
+                </tr>
+                <tr>
+                    <td id="sec9Question3">3. Is there a member of staff allocated as a liaison/point person for customers with disabilities? </td>
+                    <td style="padding-left: 30px"><input type="radio" name="sec9Question3" value="10" onclick="recordAnswers(6,10);"></td>
+                    <td style="padding-left: 14px"><input type="radio" name="sec9Question3" value="0" onclick="recordAnswers(6,0);"></td>
+                </tr>
+            </table>
+            <br>
+            <button id="section9Button" type="button" class="btn" onclick="scoreSection(9)">Submit</button>
+            </div>
+        </section>
+
+        <!-- Section 10 -->
+        <section class="question-sections, hideSection" id="section10">
+            <h2>Section 10: Physical Access/Place (50)</h2>
+            <div id="surveyQuestions10">
+            <table>
+                <tr>
+                    <th></th>
+                    <th>yes<span style="color: #4394d6">(10)</span></th>
+                    <th>no</th>
+                </tr>
+                <tr>
+                    <td id="sec10Question1">1. Have you or your colleagues carried out an audit to evaluate the UniversAbility  of your facility</td>
+                    <td style="padding-left: 30px"><input type="radio" name="sec10Question1" value="10" onclick="recordAnswers(1,10);"></td>
+                    <td style="padding-left: 14px"><input type="radio" name="sec10Question1" value="0" onclick="recordAnswers(1,0);"></td>
+                </tr>
+                <tr>
+                    <td>2. Does your facility( or the facility you use) consider the following disabilities when evaluating UniversAbility :</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+            <div id="sec10Question2">
+                <br>
+                <table>
+                    <tr>
+                        <th>Disability Category</th>
+                        <th>YES</th>
+                    </tr>
+                    <tr>
+                        <td>Physical disabilities <span style="color: #4394d6">(10)</span></td>
+                        <td><input type="checkbox" name="Section10"></td>
+                    </tr>
+                    <tr>
+                        <td>Intellectual disabilities <span style="color: #4394d6">(10)</span></td>
+                        <td><input type="checkbox" name="Section10"></td>
+                    </tr>
+                    <tr>
+                        <td>Sensory disabilities <span style="color: #4394d6">(10)</span></td>
+                        <td><input type="checkbox" name="Section10"></td>
+                    </tr>
+                    <tr>
+                        <td>Mental health difficulties<span style="color: #4394d6">(10)</span></td>
+                        <td><input type="checkbox" name="Section10"></td>
+                    </tr>
+                </table>
+            </div>
+            <br>
+            <br>
+            <button id="section10Button" type="button" class="btn" onclick="scoreSection(10)">Submit</button>
+            </div>
+        </section>
+
+        <!-- Section 11 -->
+        <section class="question-sections, hideSection" id="section11">
+            <h2>Section 11: Promotion (20)</h2>
+            <div id="surveyQuestions11">
+            <table>
+                <tr>
+                    <th></th>
+                    <th>yes<span style="color: #4394d6">(10)</span></th>
+                    <th>no</th>
+                </tr>
+                <tr>
+                    <td id="sec11Question1">1. Is your promotional material inclusive of people with disabilities?	</td>
+                    <td style="padding-left: 30px"><input type="radio" name="sec11Question1" value="10" onclick="recordAnswers(1,10);"></td>
+                    <td style="padding-left: 14px"><input type="radio" name="sec11Question1" value="0" onclick="recordAnswers(1,0);"></td>
+                </tr>
+                <tr>
+                    <td id="sec11Question2">2. Have you or your colleagues/staff developed any promotional materials with the aim of attracting people with disabilities? </td>
+                    <td style="padding-left: 30px"><input type="radio" name="sec11Question2" value="10" onclick="recordAnswers(2,10);"></td>
+                    <td style="padding-left: 14px"><input type="radio" name="sec11Question2" value="0" onclick="recordAnswers(2,0);"></td>
+                </tr>
+            </table>
+            <br>
+            <br>
+            <button id="section11Button" type="button" class="btn" onclick="scoreSection(11)">Submit</button>
+            </div>
+        </section>
+
+        <!-- Process Survey button -->
+        <section class="question-sections, hideSection" id="section12">
+            <div id="surveyQuestions12">
+            <h2 style="width: 20%;margin-left: 40%;margin-right: 40%; font-size: 1.2rem; text-decoration: underline">Survey Complete</h2>
+            <button id="section12Button" type="button" class="btn" onclick="processSurvey()">Process Survey</button>
+            </div>
+        </section>
+    </form>
+</main>
+<script src="QuizFunctions.js"></script>
+</body>
+</html>
